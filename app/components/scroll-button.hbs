@@ -1,0 +1,4 @@
+<button class="w-10 h-10  m-2 {{if (eq activeView scrollto) 'bg-black text-white' 'bg-white text-black'}}" {{on "click"
+    (fn move-view scrollto)}}>
+    {{scrollto}}
+</button>

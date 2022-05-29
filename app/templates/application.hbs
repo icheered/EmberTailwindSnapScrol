@@ -1,0 +1,20 @@
+{{page-title "ScrollSnap"}}
+
+<div class="bg-red-600 bg-green-600 bg-blue-600"></div>
+
+<div class="w-screen bg-gray-800 text-white absolute">topbar</div>
+
+<div class="absolute h-screen flex flex-col items-center justify-center">
+    <ScrollButton @scrollto="1" @move-view={{this.moveView}} @activeView={{this.activeView}}></ScrollButton>
+    <ScrollButton @scrollto="2" @move-view={{this.moveView}} @activeView={{this.activeView}}></ScrollButton>
+    <ScrollButton @scrollto="3" @move-view={{this.moveView}} @activeView={{this.activeView}}></ScrollButton>
+</div>
+
+
+
+<div class="snap-y snap-mandatory h-screen w-screen overflow-scroll no-scrollbar overflow-x-hidden" {{on "scroll"
+    this.setActiveViewOnScroll}}>
+    <ScrollView @div_id="1" class="bg-red-600">test 1</ScrollView>
+    <ScrollView @div_id="2" class="bg-blue-600">test 2</ScrollView>
+    <ScrollView @div_id="3" class="bg-green-600">test 3</ScrollView>
+</div>
